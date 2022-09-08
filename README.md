@@ -1,4 +1,4 @@
-#Parts del projecte
+# Parts del projecte
 Control de versions
  - Crear un repositori a GitHub i compartir-lo amb l’equip docent
  - Crear un repositori local i vincular-lo amb el remot
@@ -13,10 +13,10 @@ Aplicació
  - A partir de les dades del formulari, generar la pantalla d’inici des de l’entorn de servidor.
  - Crear una graella on mostrarem les cartes. Cada element serà interactiu i a partir d’un event, generarà l’acció corresponent.
  - Mostrarem les següents dades per pantalla:
-  - Número de torn.
-  - Quin és el jugador que li toca jugar.
-  - Puntuació actual de cada jugador.
-  - El temps restant del torn (si està activat)..
+   - Número de torn.
+   - Quin és el jugador que li toca jugar.
+   - Puntuació actual de cada jugador.
+   - El temps restant del torn (si està activat)..
  - Crear una pàgina de classificació amb un llistat dels Jugadors ordenats per punts.
  - Crear un full d’estils únic per tot el projecte.
  - Opcional: Aplicar animacions CSS3 per dotar d’efectes les cartes.
