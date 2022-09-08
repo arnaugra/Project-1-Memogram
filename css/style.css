@@ -8,7 +8,9 @@ body {
     flex-direction: column;
     justify-content: center;
 }
-.container {background-color: #ffc0cb88;
+.container {background-color: #ffc0cb65;
+    margin: 50px;
+
     width: 100vw;
     max-width: 1200px;
     align-self: center;
@@ -27,6 +29,9 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+}
+.board{
+    display: flex;
 }
 /* #endregion position */
 /* #region style */
