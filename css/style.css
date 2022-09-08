@@ -1,0 +1,43 @@
+/* #region position */
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.container {background-color: #ffc0cb88;
+    width: 100vw;
+    max-width: 1200px;
+    align-self: center;
+
+    text-align: center;
+}
+.section {
+    margin: 100px 0;
+}
+.sectionConfig{
+    margin: 40px 0;
+}
+.players {
+    margin: auto;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+/* #endregion position */
+/* #region style */
+h1 {
+    font-size: 64px;
+}
+input.infoAxis {
+    width: 50px;
+}
+.startButton {
+    height: 25px;
+    padding: 0 20px;
+}
+/* #endregion style */
