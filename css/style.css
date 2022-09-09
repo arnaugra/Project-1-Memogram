@@ -3,24 +3,28 @@
     margin: 0;
     padding: 0;
 }
-body {
+body {background-color: #ffc0cb65;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    overflow-x: hidden;
 }
-.container {background-color: #ffc0cb65;
-    margin: 50px;
+.container {
+    margin: 50px 0;
 
-    width: 100vw;
+    width: 90vw;
     max-width: 1200px;
     align-self: center;
 
     text-align: center;
 }
+.container:first-child {
+    margin: 0;
+}
 .section {
     margin: 100px 0;
 }
-.sectionConfig{
+.sectionArticle{
     margin: 40px 0;
 }
 .players {
@@ -30,8 +34,31 @@ body {
     flex-direction: row;
     justify-content: space-evenly;
 }
-.board{
+.board {
     display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    gap: 20px;
+
+    margin: auto;
+    padding: 50px;
+
+    max-width: 90vw;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+
+    margin: auto;
+
+    width: 100%;
+}
+.board>.row>img {
+    min-height: 25%;
+    max-height: 175px;
 }
 /* #endregion position */
 /* #region style */
@@ -41,8 +68,32 @@ h1 {
 input.infoAxis {
     width: 50px;
 }
-.startButton {
-    height: 25px;
+input[type=button] {
+    height: 30px;
     padding: 0 20px;
 }
+
+.rankList {
+    display: flex;
+    justify-content: center;
+}
+.rankList table {
+    border-collapse: collapse;
+    text-align: left;
+}
+.rankList table th{
+    background-color: #adadad88;
+}
+.rankList table td:first-child {
+    width: 150px;
+}
+.rankList table tr:nth-child(odd) {
+    background-color: #adadad33;
+}
+.rankList table th,
+.rankList table td {
+    border: 1px solid;
+    padding: 10px;
+}
+
 /* #endregion style */

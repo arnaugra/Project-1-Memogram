@@ -16,36 +16,47 @@
         <div class="section">
             <h1>Memory</h1>
             <p>Arnau Granados - 2n DAW Cendrassos</p>
-        <h2><code>Configuració</code></h2>
+            <h2><code>Configuració</code></h2>
         </div>
-        <div class="section">
+        <div class="section config">
 
-            <form action="main.php" onsubmit=""></form>
+            <form action="php/main.php" method="get" onsubmit="">
 
-            <div class="sectionConfig players">
-                <!-- nPlayers -->
-                <div class="playerIcon">
-                    Solo
-                    <input type="radio" name="nPlayers" id="solo">
+                <div class="sectionArticle players">
+                    <!-- nPlayers -->
+                    <div class="playerIcon">
+                        Jugadors:
+                        <select name="nPlayers" id="nPlayers">
+                            <option value="one">1</option>
+                            <option value="two">2</option>
+                            <option value="three">3</option>
+                            <option value="four">4</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="playerIcon">
-                    Multijugador
-                    <input type="radio" name="nPlayers" id="multyPlayer">
+
+                <div class="sectionArticle">
+                    <!-- boardSice -->
+                    <p>Cartes:</p></br>
+                    <span>Eix X:</span>
+                    <input type="text" name="xAxis" id="X" class="infoAxis">
+                    <span> x </span>
+                    <span> Eix Y:</span>
+                    <input type="text" name="yAxis" id="Y" class="infoAxis">
                 </div>
-            </div>
 
-            <div class="sectionConfig">
-                <!-- boardSice -->
-                <span>Eix X:</span>
-                <input type="text" name="xAxis" id="X" class="infoAxis">
-                <span> x </span>
-                <span>Eix Y:</span>
-                <input type="text" name="yAxis" id="Y" class="infoAxis">
-            </div>
+                <div class="sectionArticle">
+                    <!-- button -->
+                    <input type="button" value="Començar" class="button" />
+                </div>
 
-            <div class="sectionConfig">
+            </form>
+
+            <div class="sectionArticle">
                 <!-- button -->
-                <input type="button" value="COMENÇAR" class="startButton">
+                <a href="hallOfFame.html">
+                    <input type="button" value="Saló de la Fama" class="button" />
+                </a>
             </div>
 
         </div>
