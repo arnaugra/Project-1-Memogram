@@ -49,12 +49,12 @@
                 </table>
             </div>
 
-            <div class="sectionArticle home">
-                <a href="index.html">
-                    <input type="button" value="Inici" class="home" />
-                </a>
-            </div>
-
+        </div>
+        
+        <div class="section">
+            <a href="index.php">
+                <input type="button" value="Inici" class="home" />
+            </a>
         </div>
     </div>
 </body>

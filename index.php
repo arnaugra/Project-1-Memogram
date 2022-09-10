@@ -24,7 +24,7 @@
 
                 <div class="sectionArticle players">
                     <!-- nPlayers -->
-                    <div class="playerIcon">
+                    <div class="nPlayer">
                         Jugadors:
                         <select name="nPlayers" id="nPlayers">
                             <option value="one">1</option>
@@ -35,14 +35,25 @@
                     </div>
                 </div>
 
+                <div class="sectionArticle category">
+                    <!-- category -->
+                    <div class="category">
+                        Categoría:
+                        <select name="category" id="category">
+                            <option value="one">Gossos</option>
+                            <option value="two">Ànecs</option>
+                        </select>
+                    </div>
+                </div>
+
                 <div class="sectionArticle">
                     <!-- boardSice -->
-                    <p>Cartes:</p></br>
+                    <p>Cartes:</br> <code>Ha de ser un valor parell</code></p>
                     <span>Eix X:</span>
-                    <input type="text" name="xAxis" id="X" class="infoAxis">
+                    <input type="number" name="xAxis" id="X" class="infoAxis" min="2" max="5">
                     <span> x </span>
-                    <span> Eix Y:</span>
-                    <input type="text" name="yAxis" id="Y" class="infoAxis">
+                    <span>Eix Y:</span>
+                    <input type="number" name="yAxis" id="Y" class="infoAxis" min="2" max="5">
                 </div>
 
                 <div class="sectionArticle">
@@ -54,7 +65,7 @@
 
             <div class="sectionArticle">
                 <!-- button -->
-                <a href="hallOfFame.html">
+                <a href="hallOfFame.php">
                     <input type="button" value="Saló de la Fama" class="button" />
                 </a>
             </div>
