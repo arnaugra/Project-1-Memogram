@@ -1,41 +1,3 @@
-function validate() {
-    const form = document.forms["configForm"];
-    const names = document.querySelector(".nameFields").childNodes;
-    const data = {
-        "name" : [form["player1"].value],
-        "category" : form["category"].value,
-        "board" : form["boardSize"].value
-    }
-    console.log(typeof(data.board));
-
-    var correct = true;
-    var change = "ERROR D'ENTRADA: \n\n";
-
-    console.log(names);
-    var num = 1;
-    names.forEach(element => {
-
-        data.name.push(element.value);
-        if (element.value == "") {
-            change += " - El jugador " + num + " no pot estar en blanc\n";
-            correct = false;
-            num++;
-        }
-    });
-
-    if (correct) {
-
-    console.table(data)
-        alert("!")
-        form.submit();
-
-    } else {
-        var a = document.createElement("hr")
-        alert(change)
-    }
-
-}
-
 function players() {
     const fieldsDiv = document.querySelector(".nameFields");
     const players = document.querySelector("#nPlayers");
@@ -84,5 +46,48 @@ function players() {
         default:
             break;
     }
+}
+
+function validate() {
+    const form = document.forms["configForm"];
+    const names = document.querySelector(".nameFields").childNodes;
+    const data = {
+        "name": [form["player1"].value],
+        "category": form["category"].value,
+        "board": form["boardSize"].value
+    }
+    console.log(typeof (data.board));
+
+    var correct = true;
+    var change = "ERROR D'ENTRADA: \n\n";
+
+    console.log(names);
+    console.log("aaaaaaaaaaaaa");
+    var num = 1;
+    if (names.length > 1) {
+        names.forEach(element => {
+            if (names[0] !== element) {
+                data.name.push(element.value);
+                if (element.value == "") {
+                    change += " - El jugador " + num + " no pot estar en blanc\n";
+                    correct = false;
+                    num++;
+                }
+            }
+        });
+    }
+
+
+    if (correct) {
+
+        console.table(data)
+        alert("!")
+        form.submit();
+
+    } else {
+        var a = document.createElement("hr")
+        alert(change)
+    }
+
 }
 

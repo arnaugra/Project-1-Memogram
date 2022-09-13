@@ -4,7 +4,6 @@ window.onload = function() {
     var x = 0;
     var y = 0;
 
-
     switch (boardSize) {
         case "1":
             x = 3;
@@ -40,5 +39,13 @@ window.onload = function() {
     }
 
     cards();
+}
 
+function cards() {
+    var cards = document.querySelectorAll(".card");
+    console.log(cards);
+
+    cards.forEach(element => {
+        element.attribute
+    });
 }
