@@ -5,18 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memory Arnau Granados58542698426</title>
+    <title>Memory Arnau Granado58542698426</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pico.css">
 
 </head>
 
 <body>
     <div class="container">
         <div class="section">
-            <h1>Memory</h1>
-            <p>Arnau Granados - 2n DAW Cendrassos</p>
-            <h2><code>Saló de la Fama</code></h2>
+            <h1>Memory: <code>Saló de la Fama</code></h1>
         </div>
         <div class="section">
 
@@ -52,7 +50,7 @@
         </div>
         
         <div class="section">
-            <a href="index.php">
+            <a href="index.html">
                 <input type="button" value="Inici" class="home" />
             </a>
         </div>

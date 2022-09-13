@@ -11,7 +11,7 @@
 - PHP 8.1.10
 
 ### Virtual Machine
--Oracle MV VirtualBox
+- Oracle MV VirtualBox
 
 ### Server
 - Debian Virtual Machine
