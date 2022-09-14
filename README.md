@@ -72,9 +72,9 @@ Navegació web http a projecte
 
 Portada del joc i accés al formulari inicial 
 
->Planificació del projecte 
+Planificació del projecte 
 
->Anàlisi de requisits 
+Anàlisi de requisits 
 
 El Git instal·lat 
 
@@ -82,7 +82,7 @@ El repositori local del projecte
 
 ## Etapa 2 
 
->Validació del formulari i càrrega de la interfície del joc (sense que funcioni) 
+Validació del formulari i càrrega de la interfície del joc (sense que funcioni) 
 
 >Maquetació del prototip en funcionament 
 

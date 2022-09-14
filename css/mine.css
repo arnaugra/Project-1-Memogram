@@ -1,3 +1,8 @@
+*>a{
+    color: inherit;
+    text-decoration: none;
+}
+
 .board {
     display: flex;
     flex-direction: column;
@@ -6,15 +11,26 @@
     padding-bottom: 25px;
     width: 100%;
 }
+
 .row {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 25px;
-    width: 100%;
 }
+
 .card {
-    width: 15%;
+    width: 10vw;
     max-width: 200px;
+    height: 10vw;
+    max-height: 200px;
+
+    border-radius: 20%;
+    background-color: #73828c;
+}
+
+th {
+    background-color: #73828c;
+    color: #f6f8f9;
 }

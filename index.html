@@ -8,20 +8,37 @@
     <title>Memory Arnau Granados</title>
 
     <link rel="stylesheet" href="css/pico.css">
+    <link rel="stylesheet" href="css/mine.css">
     <script src="js/validateForm.js"></script>
 
 </head>
 
 <body onload="players();">
-    <div class="container">
-        <div class="section">
-            <h1>Memory: <code>Configuració</code></h1>
-        </div>
-        <div class="section config">
+    <noscript>
+        <dialog open>
+            <article>
+                <header>
+                    <a href="#close" aria-label="Close" class="close"></a>
+                    Problema: Javascript
+                </header>
+                <p>El teu navegador, o no soporta JavaScript, o no ho tens activat, cambia-ho o parla amb l'administrador.
+                </p>
+            </article>
+        </dialog>
+    </noscript>
 
+    <div class="container">
+
+        <div>
+            <h1>
+                <a href="index.html">Memory: </a><code>Configuració</code>
+            </h1>
+        </div>
+
+        <div>
             <form action="game.php" method="get" id="configForm">
 
-                <div class="sectionArticle players">
+                <div>
                     <p>Jugadors: </p>
                     <select name="nPlayers" id="nPlayers" onchange="players()">
                         <option value="1">1</option>
@@ -34,17 +51,15 @@
                     </div>
                 </div>
 
-                <div class="sectionArticle category">
-                    <div class="category">
-                        <p>Categoría: </p>
-                        <select name="category" id="category">
-                            <option value="dog">Gossos</option>
-                            <option value="duck">Ànecs</option>
-                        </select>
-                    </div>
+                <div>
+                    <p>Categoría: </p>
+                    <select name="category" id="category">
+                        <option value="dog">Gossos</option>
+                        <option value="duck">Ànecs</option>
+                    </select>
                 </div>
 
-                <div class="sectionArticle board">
+                <div>
                     <p>Taulell: </p>
                     <select name="boardSize" id="boardSize">
                         <option value="1">3x2</option>
@@ -53,19 +68,23 @@
                     </select>
                 </div>
 
-                <div class="sectionArticle button">
+                <div>
                     <input type="button" value="Començar" onclick="validate();" />
                 </div>
 
             </form>
 
-            <div class="sectionArticle">
+            <div>
                 <!-- button -->
                 <a href="hallOfFame.php">
                     <input type="button" value="Saló de la Fama" class="secondary" />
                 </a>
             </div>
 
+        </div>
+
+        <div>
+            Arnau Granados - DAW Cendrassos 2022/2023
         </div>
     </div>
 </body>

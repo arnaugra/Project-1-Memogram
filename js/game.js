@@ -1,4 +1,6 @@
-window.onload = function() {
+window.onload = function () {
+    console.warn("No vulguis fer trampes 😡");
+
     const myBoard = document.querySelector(".board");
 
     var x = 0;
@@ -22,6 +24,9 @@ window.onload = function() {
             break;
     }
 
+    var indexId = 0;
+    myBoard.innerHTML = "";
+
     for (let i = 0; i < y; i++) {
 
         const newRow = document.createElement("div")
@@ -29,9 +34,10 @@ window.onload = function() {
 
         for (let j = 0; j < x; j++) {
 
-            const image = document.createElement("img")
-            image.setAttribute("src", "img/test.jpg");
+            const image = document.createElement("div");
+            image.setAttribute("id", indexId);
             image.classList.add("card");
+            indexId++;
 
             newRow.appendChild(image);
         }
@@ -45,7 +51,10 @@ function cards() {
     var cards = document.querySelectorAll(".card");
     console.log(cards);
 
+
+
     cards.forEach(element => {
         element.attribute
     });
 }
+

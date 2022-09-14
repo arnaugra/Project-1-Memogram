@@ -56,14 +56,16 @@ function validate() {
         "category": form["category"].value,
         "board": form["boardSize"].value
     }
-    console.log(typeof (data.board));
 
     var correct = true;
     var change = "ERROR D'ENTRADA: \n\n";
 
-    console.log(names);
-    console.log("aaaaaaaaaaaaa");
-    var num = 1;
+    if (form['player1'].value == "") {
+        change += " - El jugador 1 no pot estar en blanc\n";
+        correct = false;
+    }
+
+    var num = 2;
     if (names.length > 1) {
         names.forEach(element => {
             if (names[0] !== element) {
@@ -80,8 +82,9 @@ function validate() {
 
     if (correct) {
 
-        console.table(data)
-        alert("!")
+        console.table(data);
+
+        alert("!");
         form.submit();
 
     } else {

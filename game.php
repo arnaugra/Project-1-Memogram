@@ -9,67 +9,47 @@
 
     <link rel="stylesheet" href="css/pico.css">
     <link rel="stylesheet" href="css/mine.css">
-
-    <?php
-    $player1 = $_GET["player1"];
-    if ($_GET["player2"] == null) {
-        $player2 = "NotAName";
-    } else {
-        $player2 = $_GET["player2"];
-    }
-    if ($_GET["player3"] == null) {
-        $player3 = "NotAName";
-    } else {
-        $player3 = $_GET["player3"];
-    }
-    if ($_GET["player4"] == null) {
-        $player4 = "NotAName";
-    } else {
-        $player3 = $_GET["player3"];
-    }
-    ?>
-    <script type="text/javascript">
+    
+    <script>
         const nPlayers = "<?php echo $_GET['nPlayers'] ?>";
         const cat = "<?php echo $_GET['category'] ?>";
         const boardSize = "<?php echo $_GET['boardSize'] ?>";
-        const name1 = "<?php echo $player1 ?>";
-        const name2 = "<?php echo $player2 ?>";
-        const name3 = "<?php echo $player3 ?>";
-        const name4 = "<?php echo $player4 ?>";
+        const name1 = "<?php echo $_GET['player1'] ?>";
+        const name2 = "";
+        const name3 = "";
+        const name4 = "";
+        const names = [name1];
+        for (let i = 2; i <= (parseInt(nPlayers)); i++) {
+            if (i == 2) {
+                names.push("<?php echo @$_GET['player2']?>")
+            }
+            if (i == 3) {
+                names.push("<?php echo @$_GET['player3']?>")
+            }
+            if (i == 4) {
+                names.push("<?php echo @$_GET['player4']?>")
+            }
+        }
     </script>
 
     <script src="js/game.js"></script>
 
 </head>
 
-<?php
-echo "nombre jugadors:" . $_GET["nPlayers"] . " || ";
-echo "nom1:" . $player1 . " || ";
-echo "nom2:" . $player2 . " || ";
-echo "nom3:" . $player3 . " || ";
-echo "nom4:" . $player4 . " || ";
-echo "categoría:" . $_GET["category"] . " || ";
-echo "id taulell:" . $_GET["boardSize"] . " ";
-?>
-
-
-
 <body>
     <div class="container">
         <div class="section">
-            <h1>Memory: <code>Joc</code></h1>
+            <h1><a href="index.html">Memory:</a> <code>Joc</code></h1>
         </div>
         <div class="section">
-            <h2>Jugador
-                <!-- <?php echo $_GET["player"]; ?> -->: <span id="time">Temps</span>
-            </h2>
-            <p>torn: <span id="turn">temps</span> - Puntuació: <span id="score">punts</span></p>
+            <h2><span id="player">Jugador: </span><span id="time">Temps</span></h2>
+            <p>Torn: <span id="turn">Torn</span> - Puntuació: <span id="score">punts</span></p>
         </div>
         <div class="section">
 
 
             <div class="sectionArticle board">
-                <!-- <div class="row">
+                <div class="row">
                     <img src="img/dog/dog1.jpg" alt="test" class="card">
                     <img src="img/test.jpg" alt="test" class="card">
                     <img src="img/test.jpg" alt="test" class="card">
@@ -82,17 +62,16 @@ echo "id taulell:" . $_GET["boardSize"] . " ";
                     <img src="img/test.jpg" alt="test" class="card">
                     <img src="img/test.jpg" alt="test" class="card">
                     <img src="img/test.jpg" alt="test" class="card">
-                </div> -->
+                </div>
             </div>
 
 
         </div>
 
         <div class="section">
-            <a href="index.html">
-                <input type="button" value="Inici" class="home" />
-            </a>
+            Arnau Granados - DAW Cendrassos 2022/2023
         </div>
+
     </div>
 
 </body>
