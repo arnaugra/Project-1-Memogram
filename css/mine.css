@@ -26,8 +26,14 @@
     height: 10vw;
     max-height: 200px;
 
-    border-radius: 20%;
+    border-radius: 15%;
     background-color: #73828c;
+
+    overflow: hidden;
+}
+
+.card>img {
+    opacity: 0;
 }
 
 th {
