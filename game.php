@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
     <title>Memory Arnau Granados</title>
 
     <link rel="stylesheet" href="css/pico.css">
@@ -14,6 +15,7 @@
         const nPlayers = "<?php echo $_GET['nPlayers'] ?>";
         const cat = "<?php echo $_GET['category'] ?>";
         const boardSize = "<?php echo $_GET['boardSize'] ?>";
+        const turnTime = <?php echo $_GET['turnTime']?>;
         const name1 = "<?php echo $_GET['player1'] ?>";
         const name2 = "";
         const name3 = "";
@@ -31,7 +33,6 @@
             }
         }
     </script>
-
     <script src="js/game.js"></script>
 
 </head>
@@ -41,9 +42,12 @@
         <div class="section">
             <h1><a href="index.html">Memory:</a> <code>Joc</code></h1>
         </div>
-        <div class="section">
-            <h2><span id="player">Jugador: </span><span id="time">Temps</span></h2>
-            <p>Torn: <span id="turn">Torn</span> - Puntuació: <span id="score">punts</span></p>
+        <div class="section headings">
+            <h3><span id="player"></span>: <span id="time"><?php echo $_GET['turnTime']?></span></h3>
+            <h4>Torn: <span id="turn"></span> - Puntuació: <span id="score"></span></h4>
+        </div>
+        <div class="section allPlayers grid">
+            
         </div>
         <div class="section">
 
@@ -69,7 +73,7 @@
         </div>
 
         <div class="section">
-            Arnau Granados - DAW Cendrassos 2022/2023
+            Arnau Granados - 2.DAW Cendrassos 2022/2023
         </div>
 
     </div>

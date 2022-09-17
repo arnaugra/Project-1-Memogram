@@ -3,6 +3,11 @@
     text-decoration: none;
 }
 
+/* #region game */
+.allPlayers>* {
+    margin-bottom: var(--spacing);
+}
+
 .board {
     display: flex;
     flex-direction: column;
@@ -26,7 +31,7 @@
     height: 10vw;
     max-height: 200px;
 
-    border-radius: 15%;
+    border-radius: 10%;
     background-color: #73828c;
 
     overflow: hidden;
@@ -34,9 +39,13 @@
 
 .card>img {
     opacity: 0;
+    -webkit-user-drag: none;
 }
+/* #endregion game */
 
+/* #region hall of fame */
 th {
     background-color: #73828c;
     color: #f6f8f9;
 }
+/* #endregion Hall of fame */

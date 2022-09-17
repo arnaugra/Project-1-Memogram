@@ -18,7 +18,6 @@
         <dialog open>
             <article>
                 <header>
-                    <a href="#close" aria-label="Close" class="close"></a>
                     Problema: Javascript
                 </header>
                 <p>El teu navegador, o no soporta JavaScript, o no ho tens activat, cambia-ho o parla amb l'administrador.
@@ -41,13 +40,14 @@
                 <div>
                     <p>Jugadors: </p>
                     <select name="nPlayers" id="nPlayers" onchange="players()">
+                        <option value="" selected disabled hidden>Selecciona el nombre de jugadors</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
                     </select>
                     <div class="nameFields">
-                        <input type="text" name="player1" id="player1" placeholder="Nom jugador 1">
+                        
                     </div>
                 </div>
 
@@ -69,13 +69,22 @@
                 </div>
 
                 <div>
+                    <p>Temps per torn: </p>
+                    <select name="turnTime" id="turnTime">
+                        <option value="0">0 (No hi ha temps per torn)</option>
+                        <option value="3">3</option>
+                        <option value="6">6</option>
+                        <option value="9">9</option>
+                    </select>
+                </div>
+
+                <div>
                     <input type="button" value="Començar" onclick="validate();" />
                 </div>
 
             </form>
 
             <div>
-                <!-- button -->
                 <a href="hallOfFame.php">
                     <input type="button" value="Saló de la Fama" class="secondary" />
                 </a>
@@ -84,7 +93,7 @@
         </div>
 
         <div>
-            Arnau Granados - DAW Cendrassos 2022/2023
+            Arnau Granados - 2.DAW Cendrassos 2022/2023
         </div>
     </div>
 </body>

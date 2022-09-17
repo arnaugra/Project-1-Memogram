@@ -84,13 +84,13 @@ El repositori local del projecte
 
 Validació del formulari i càrrega de la interfície del joc (sense que funcioni) 
 
->Maquetació del prototip en funcionament 
+Maquetació del prototip en funcionament 
 
 Crear un repositori a Github i vincular el repositori local
 
 ## Etapa 3 
 
->Implementació del joc (que es pugui jugar correctament) 
+Implementació del joc (que es pugui jugar correctament) 
 
 >Mostra de la pàgina de classificació a partir de les dades de la cookie. 
 

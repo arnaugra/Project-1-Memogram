@@ -24,19 +24,13 @@
                     <tr>
                         <th>Id</th>
                         <th>Nom</th>
+                        <th>Punts</th>
                         <th>Temps</th>
+                        <th>Torns</th>
                     </tr>
                     <tr>
                         <td>yo</td>
                         <td>yo</td>
-                        <td>yo</td>
-                    </tr>
-                    <tr>
-                        <td>yo</td>
-                        <td>yo</td>
-                        <td>yo</td>
-                    </tr>
-                    <tr>
                         <td>yo</td>
                         <td>yo</td>
                         <td>yo</td>
@@ -45,19 +39,46 @@
                         <td>yo</td>
                         <td>yo</td>
                         <td>yo</td>
+                        <td>yo</td>
+                        <td>yo</td>
                     </tr>
                     <tr>
+                        <td>yo</td>
+                        <td>yo</td>
+                        <td>yo</td>
+                        <td>yo</td>
+                        <td>yo</td>
+                    </tr>
+                    <tr>
+                        <td>yo</td>
+                        <td>yo</td>
+                        <td>yo</td>
+                        <td>yo</td>
+                        <td>yo</td>
+                    </tr>
+                    <tr>
+                        <td>yo</td>
+                        <td>yo</td>
                         <td>yo</td>
                         <td>yo</td>
                         <td>yo</td>
                     </tr>
                 </table>
+
+                <?php
+                
+                foreach ($_COOKIE as $i => $value) {
+                    echo $i . "= " . $value;
+                };
+                
+                ?>
+
             </div>
 
         </div>
 
         <div class="section">
-            Arnau Granados - DAW Cendrassos 2022/2023
+            Arnau Granados - 2.DAW Cendrassos 2022/2023
         </div>
 
     </div>
