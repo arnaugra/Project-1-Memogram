@@ -1,4 +1,4 @@
-# Requisits
+# Requirements
 
 ### Text editor
 - Visual Estudio Code
@@ -17,10 +17,29 @@
 - Debian Virtual Machine
 
 ***
-# Planificació
-1. He començat per crear la pàgina d'inici de manera estàtica, seguit del saló de la Fama i el "taulell" del joc
 
-2. 
+# Planning
+
+1. I've started by creating the home page statically, followed by the Hall of Fame and the game "board".
+
+2. I have created the form validation, the preparation of the listed players and the card system.
+
+3. With Pico CSS I changed the default HTML style to a modern and minimalist one.
+
+4. I created the game mechanics.
+
+5. I have applied the mechanics of turns, expired moves and lost moves of each player.
+
+6. I have applied the timer, take into account the start of the turn, when you score, do not complete moves in the turn, miss or do not participate.
+
+7. I have fixed all the problems that point 6 caused me.
+
+8. I have created the cookie for the winner with all game states (not applied yet).
+
+
+
+
+
 ***
 # Parts del projecte
 Control de versions *
@@ -42,7 +61,7 @@ Servidor web
 Aplicació 
  - Crear un formulari que demani les dades inicials del joc. 
 
- >- A partir de les dades del formulari, generar la pantalla d’inici des de l’entorn de servidor. 
+ - A partir de les dades del formulari, generar la pantalla d’inici des de l’entorn de servidor. 
 
  - Crear una graella on mostrarem les cartes. Cada element serà interactiu i a partir d’un event, generarà l’acció corresponent. 
 
@@ -54,7 +73,7 @@ Aplicació
 
 > - Crear una pàgina de classificació amb un llistat dels Jugadors ordenats per punts. 
 
-> - Crear un full d’estils únic per tot el projecte. 
+ - Crear un full d’estils únic per tot el projecte. 
 
 > - Opcional: Aplicar animacions CSS3 per dotar d’efectes les cartes. 
 
@@ -98,7 +117,7 @@ Implementació del joc (que es pugui jugar correctament)
 
 ## Etapa 4 
 
->Incorporat el temporitzador dels torns 
+Incorporat el temporitzador dels torns 
 
 >Proves de funcionament 
 

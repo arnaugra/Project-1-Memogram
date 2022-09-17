@@ -376,5 +376,5 @@ function cardFail() {
  */
 function cookiesToPhp(name, time, turns, points) {
     var date = new Date();
-    document.cookie = "name=" + name; "time=" + time; "turns=" + turns; "points=" + points; "expires=" + date.setFullYear(date.getFullYear() + 10);
+    document.cookie = "name=" + name; "time=" + time; "turns=" + turns; "points=" + points; "jugadors=" + nPlayers; "expires=" + date.setFullYear(date.getFullYear() + 10);
 }
