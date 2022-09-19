@@ -66,11 +66,15 @@
                 </table>
 
                 <?php
-                
+
                 foreach ($_COOKIE as $i => $value) {
-                    echo $i . "= " . $value;
+                ?>
+                    <p>
+                        <?php echo $i . "= " . $value; ?>
+                    </p>
+                <?php
                 };
-                
+
                 ?>
 
             </div>

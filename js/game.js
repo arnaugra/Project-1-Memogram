@@ -221,9 +221,6 @@ function cards() {
 //#endregion
 
 //#region click control
-var time = document.querySelector("#time")
-console.log(document.querySelector("#time"));
-
 console.warn("COMENTA ESTO");
 /**
  * 
@@ -239,28 +236,29 @@ function cardClick(card) {
         idClicked.push(card.getAttribute("id"));
         card.style.opacity = "1";
         card.removeAttribute("onclick");
+    }
 
-        if (classClicked.length == 2) {
+    if (classClicked.length == 2) {
 
-            if (classClicked[0] == classClicked[1]) {
-                classClicked = [];
-                idClicked = [];
-                players[actualPlayer].points++;
-                totalMatch += 2;
-                document.querySelector("#time").innerHTML = turnTime;
-            } else {
-                players[actualPlayer].turns++;
-                document.querySelector("#time").innerHTML = turnTime;
-                setTimeout(() => {
-                    cardFail();
-                    card.setAttribute("onclick", "cardClick(this)");
-                    card.style.opacity = "0";
-                }, 500);
-                changePlayer();
-            }
-            currentPlayer();
+        if (classClicked[0] == classClicked[1]) {
+            classClicked = [];
+            idClicked = [];
+            players[actualPlayer].points++;
+            totalMatch += 2;
+            document.querySelector("#time").innerHTML = turnTime;
+        } else {
+            players[actualPlayer].turns++;
+            document.querySelector("#time").innerHTML = turnTime;
+            setTimeout(() => {
+                cardFail();
+                card.setAttribute("onclick", "cardClick(this)");
+                card.style.opacity = "0";
+            }, 500);
+            changePlayer();
         }
     }
+    playerList();
+    currentPlayer();
 
     // wining
     if (totalMatch == totalCards) {
@@ -269,7 +267,7 @@ function cardClick(card) {
         var clapping = new Audio("/audio/clapping.wav")
         clapping.volume = 0.1;
         clapping.play();
-        cookiesToPhp(players[actualPlayer].name, players[actualPlayer].time, players[actualPlayer].turns, players[actualPlayer].points);
+        createCookies(players[actualPlayer].name, players[actualPlayer].time, players[actualPlayer].turns, players[actualPlayer].points);
         setTimeout(() => {
             window.location.pathname = ("/hallOfFame.php")
         }, 9000);
@@ -369,12 +367,11 @@ function cardFail() {
     idClicked = [];
 }
 
-
-
 /**
  * COOKIES
  */
-function cookiesToPhp(name, time, turns, points) {
+function createCookies(name, time, turns, points) {
     var date = new Date();
     document.cookie = "name=" + name; "time=" + time; "turns=" + turns; "points=" + points; "jugadors=" + nPlayers; "expires=" + date.setFullYear(date.getFullYear() + 10);
 }
+ 

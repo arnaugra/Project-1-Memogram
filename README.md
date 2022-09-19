@@ -75,7 +75,7 @@ Aplicació
 
  - Crear un full d’estils únic per tot el projecte. 
 
-> - Opcional: Aplicar animacions CSS3 per dotar d’efectes les cartes. 
+>> - Opcional: Aplicar animacions CSS3 per dotar d’efectes les cartes. 
 
 Documentació 
  - Planificació 

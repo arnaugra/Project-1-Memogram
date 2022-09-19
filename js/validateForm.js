@@ -69,11 +69,11 @@ function validate() {
 
     // check if no number of players is selected
     if (form["nPlayers"].value == "") {
-        
+
         // and alert us of it if we didn't select anything
         alert("ERROR D'ENTRADA: \n\n - Has de seleccionar com a minim 1 jugador");
     } else {
-        
+
         // or proceed to verify the input information
         const names = document.querySelector(".nameFields").childNodes;
         const data = {
@@ -98,8 +98,8 @@ function validate() {
                     if (element.value == "") {
                         change += " - El jugador " + num + " no pot estar en blanc\n";
                         correct = false;
-                        num++;
                     }
+                    num++;
                 }
             });
         }
