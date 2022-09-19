@@ -25,7 +25,7 @@ class playerObj {
     data() {
         const data = []
         var date = new Date();
-        
+
         data.push(this.name);
         data.push(this.points);
         data.push(this.time);
@@ -40,10 +40,6 @@ class playerObj {
 }
 
 // define and declare every posible player
-var player1;
-var player2;
-var player3;
-var player4;
 var players = [];
 
 var playerIndex = 0;
@@ -278,8 +274,8 @@ function cardClick(card) {
 
     // wining
     if (totalMatch == totalCards) {
+        orderObjects();
         stopCountDown();
-        console.log("The end.");
         var clapping = new Audio("/audio/clapping.wav")
         clapping.volume = 0.1;
         clapping.play();
@@ -388,4 +384,22 @@ function cardFail() {
  */
 function createCookies(data) {
     document.cookie = "player=" + data;
+}
+
+
+function orderObjects() {
+    const results = new Map();
+    for (let i = 0; i < players.length; i++) {
+        results.set(i, players[i].points);
+    }
+let max;
+
+    for (let [key, value] of results.entries()) {
+        if (value === Math.max(...results.values())) {
+            max = key;
+        }
+    }
+    actualPlayer = max;
+    console.log(results);
+    console.log(Math.max(...results.values()));
 }
