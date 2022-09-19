@@ -21,6 +21,22 @@ class playerObj {
         this.turns = 0;
         this.points = 0;
     }
+
+    data() {
+        const data = []
+        var date = new Date();
+        
+        data.push(this.name);
+        data.push(this.points);
+        data.push(this.time);
+        data.push(this.turns);
+        data.push(date.setFullYear(date.getFullYear() + 10));
+
+        console.log(data)
+
+        return data;
+    }
+
 }
 
 // define and declare every posible player
@@ -267,7 +283,7 @@ function cardClick(card) {
         var clapping = new Audio("/audio/clapping.wav")
         clapping.volume = 0.1;
         clapping.play();
-        createCookies(players[actualPlayer].name, players[actualPlayer].time, players[actualPlayer].turns, players[actualPlayer].points);
+        createCookies(players[actualPlayer].data());
         setTimeout(() => {
             window.location.pathname = ("/hallOfFame.php")
         }, 9000);
@@ -370,8 +386,6 @@ function cardFail() {
 /**
  * COOKIES
  */
-function createCookies(name, time, turns, points) {
-    var date = new Date();
-    document.cookie = "name=" + name; "time=" + time; "turns=" + turns; "points=" + points; "jugadors=" + nPlayers; "expires=" + date.setFullYear(date.getFullYear() + 10);
+function createCookies(data) {
+    document.cookie = "player=" + data;
 }
- 
