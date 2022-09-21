@@ -28,68 +28,69 @@
                         <th>Temps</th>
                         <th>Torns</th>
                     </tr>
-                    <!-- 
-                    <tr>
-                        <td>yo</td>
-                        <td>yo</td>
-                        <td>yo</td>
-                        <td>yo</td>
-                        <td>yo</td>
-                    </tr>
-                    <tr>
-                        <td>yo</td>
-                        <td>yo</td>
-                        <td>yo</td>
-                        <td>yo</td>
-                        <td>yo</td>
-                    </tr>
-                    <tr>
-                        <td>yo</td>
-                        <td>yo</td>
-                        <td>yo</td>
-                        <td>yo</td>
-                        <td>yo</td>
-                    </tr>
-                    <tr>
-                        <td>yo</td>
-                        <td>yo</td>
-                        <td>yo</td>
-                        <td>yo</td>
-                        <td>yo</td>
-                    </tr>
-                    <tr>
-                        <td>yo</td>
-                        <td>yo</td>
-                        <td>yo</td>
-                        <td>yo</td>
-                        <td>yo</td>
-                    </tr> -->
-                </table>
+
                     <?php
 
-                    @$rankings = @json_decode($_COOKIE["memoryPlayers"]);
-                    @$cookiesData = [];
-                    @$arrayData = [];
-                    foreach ($rankings as $index => $array) {
-                        foreach ($array as $key => $value) {
-                            array_push($arrayData, $value);
-                        }
-                        array_push($cookiesData, $arrayData);
-                        $arrayData = [];
-                    }
-                    echo "<p>";
-                    print_r($cookiesData);
-                    echo "</p>";
-                    sort($cookiesData);
-                    echo "<p>";
-                    print_r($cookiesData);
-                    echo "</p>";
-                    /* sort by points */
-                    /* usort($sortedPlayers, function ($a, $b) {
-                        return $a["amount"] - $b["amount"];
-                    }); */
+                    if (!isset($_COOKIE["memoryPlayers"])) {
+                        echo "</table>";
+                        echo "<kbd> Encara no s'ha jugat res</kbd>";
+                    } else {
+                    $cookie = json_decode($_COOKIE["memoryPlayers"]);
+                    $index = 1;
 
+                    for ($i = 0; $i < count($cookie) + 4; $i++) {
+                        if ($index > 10 || $cookie[$i] == "") {
+                            break;
+                        }
+                        echo "<tr>";
+                        echo "<td>$index</td>";
+                        $index++;
+                        for ($j = 0; $j < count($cookie[$i]); $j++) {
+                            echo "<td>" . $cookie[$i][$j] . "</td>";
+                        }
+                    }
+                    echo "</table>";
+
+                    /* if (array_key_exists("nextPage", $_POST)) {
+                        nextPage($pos, $index, $cookie);
+                    } elseif (array_key_exists("prevPage", $_POST)) {
+                        prevPage($pos, $index, $cookie);
+                    }
+
+                    function nextPage($pos, $index, $cookie)
+                    {
+
+                        for ($i = $pos - 1; $i < $pos + 4; $i++) {
+                            echo "<tr>";
+                            echo "<td>$index</td>";
+                            $index++;
+                            for ($j = 0; $j < count($cookie[$i]); $j++) {
+                                echo "<td>" . $cookie[$i][$j] . "</td>";
+                            }
+                        }
+                    }
+                    function prevPage($pos, $index, $cookie)
+                    {
+
+                        for ($i = $pos - 1; $i < $pos + 4; $i++) {
+                            echo "<tr>";
+                            echo "<td>$index</td>";
+                            $index++;
+                            for ($j = 0; $j < count($cookie[$i]); $j++) {
+                                echo "<td>" . $cookie[$i][$j] . "</td>";
+                            }
+                        }
+                    } */
+                    }
+                    
+
+                    
                     ?>
+
+                <!-- <form method="post" class="navTable">
+                    <input type="submit" value="<" name="nextPage">
+                    <input type="submit" value=">" name="prevPage">
+                </form> -->
 
 
             </div>

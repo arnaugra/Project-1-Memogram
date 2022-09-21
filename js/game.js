@@ -1,5 +1,3 @@
-var x;
-var y;
 var totalCards;
 var classClicked = [];
 var idClicked = [];
@@ -21,15 +19,6 @@ class playerObj {
         this.turns = 0;
         this.points = 0;
     }
-    /* data() {
-        var date = new Date();
-        const data= ["nom:"+this.name+", points:"+this.points+", time:"+this.time+", turns:"+this.turns+", expires:"+date.setFullYear(date.getFullYear() + 10)];
-
-        console.log(data);
-        alert(0);
-
-        return data;
-    } */
 }
 
 // define and declare every posible player
@@ -88,140 +77,18 @@ function changePlayer() {
 
 //#endregion
 
-//#region load screen/board with form data
+//#region load screen with form data
 
 /**
- * when loads the page:
- *  - 1 create different "hud" elements
- *  - 2 set the number of cards of the board
- *  - 3 create the board following the size indicated
+ * when loads the page create different "hud" elements
  */
 window.onload = function () {
+    totalCards = document.querySelectorAll(".card");
     console.warn("No vulguis fer trampes 😡");
 
     // JSDoc (1)
     playerList();
     currentPlayer();
-
-    const myBoard = document.querySelector(".board");
-    myBoard.innerHTML = "";
-
-    x = 0;
-    y = 0;
-
-    // JSDoc (2)
-    switch (boardSize) {
-        case "1":
-            x = 3;
-            y = 2;
-            totalCards = 6;
-            break;
-        case "2":
-            x = 4;
-            y = 3;
-            totalCards = 12;
-            break;
-        case "3":
-            x = 5;
-            y = 4;
-            totalCards = 20;
-            break;
-        default:
-            alert("Aixó ha petat :\n - game.js/board/switch/default")
-            break;
-    }
-
-    var indexId = 0;
-
-    //JSDoc (3)
-    for (let i = 0; i < y; i++) {
-        const newRow = document.createElement("div")
-        newRow.setAttribute("class", "row");
-        for (let j = 0; j < x; j++) {
-            const image = document.createElement("div");
-            image.setAttribute("id", indexId);
-            image.classList.add("card");
-            indexId++;
-            newRow.appendChild(image);
-        }
-        myBoard.appendChild(newRow)
-    }
-
-    cards();
-}
-//#endregion
-
-//#region assign images
-
-/**
- * fills the board with images
- *  - 1 generates an array of the number of the image to insert
- *  - 2 generate an array of ids from the places in the board to fill
- *  - 3 mix the ids
- *  - 4 in a new array, match the ids with the images
- *  - 5 puts the images in each assigned position (opaciti 0 with css)
- */
-function cards() {
-    var cards = document.querySelectorAll(".card");
-    const imageCards = new Array()
-    const idCards = new Array()
-
-    // JSDoc (1)
-    for (let i = 0; i < totalCards / 2; i++) {
-        while (true) {
-            var image = rand(10, 1);
-            if (imageCards.includes(image)) {
-                continue;
-            } else {
-                imageCards.push(image);
-                break;
-            }
-        }
-    }
-
-    // JSDoc (2)
-    for (let i = 0; i < totalCards; i++) {
-        idCards.push(i);
-    }
-
-    // JSDoc (3)
-    shuffleArray(idCards)
-
-    // JSDoc (4)
-    var final = [];
-    var extra = 0;
-    for (let i = 0; i < imageCards.length; i++) {
-        final[i] = [];
-        final[i].push(imageCards[i]);
-        final[i][1] = [];
-        final[i][1].push(idCards[extra]);
-        extra++;
-        final[i][1].push(idCards[extra]);
-        extra++;
-    }
-
-    var ids = 0;
-
-    // JSDoc (5)
-    for (let i = 0; i < final.length; i++) {
-        const place = document.getElementById(final[i][1][0]);
-        const image = document.createElement("img");
-        image.setAttribute("src", "img/" + cat + "/" + cat + final[i][0] + ".jpg");
-        image.setAttribute("onclick", "cardClick(this)");
-        image.classList.add("card" + i);
-        image.id = "c" + ids;
-        place.appendChild(image);
-        ids++;
-
-        const place2 = document.getElementById(final[i][1][1]);
-        const image2 = document.createElement("img");
-        image2.setAttribute("src", "img/" + cat + "/" + cat + final[i][0] + ".jpg");
-        image2.setAttribute("onclick", "cardClick(this)");
-        image2.classList.add("card" + i);
-        image2.id = "c" + ids;
-        place2.appendChild(image2);
-        ids++;
-    }
 }
 //#endregion
 
@@ -246,12 +113,14 @@ function cardClick(card) {
     if (classClicked.length == 2) {
 
         if (classClicked[0] == classClicked[1]) {
+            console.log("goal");
             classClicked = [];
             idClicked = [];
             players[actualPlayer].points++;
             totalMatch += 2;
             document.querySelector("#time").innerHTML = turnTime;
         } else {
+            console.log("fail");
             players[actualPlayer].turns++;
             document.querySelector("#time").innerHTML = turnTime;
             setTimeout(() => {
@@ -266,9 +135,10 @@ function cardClick(card) {
     currentPlayer();
 
     // wining
-    if (totalMatch == totalCards) {
-        orderObjects();
+    if (totalMatch == totalCards.length) {
         stopCountDown();
+        console.log("yay");
+        orderObjects();
         var clapping = new Audio("/audio/clapping.wav")
         clapping.volume = 0.1;
         clapping.play();
@@ -330,15 +200,13 @@ function currentPlayer() {
 function playerList() {
     const playerNames = document.querySelector(".allPlayers");
     playerNames.innerHTML = "";
-    if (nPlayers > 1) {
-        for (let i = 0; i < nPlayers; i++) {
-            var playerDiv = document.createElement("div");
-            var playerCode = document.createElement("code");
-            playerCode.setAttribute("class", "container-fluid")
-            playerCode.innerHTML = players[i].name + " : " + players[i].turns + " torns | " + players[i].points + " punts | " + players[i].time + "s";
-            playerDiv.appendChild(playerCode);
-            playerNames.appendChild(playerDiv);
-        }
+    for (let i = 0; i < nPlayers; i++) {
+        var playerDiv = document.createElement("div");
+        var playerCode = document.createElement("code");
+        playerCode.setAttribute("class", "container-fluid")
+        playerCode.innerHTML = players[i].name + " : " + players[i].turns + " torns | " + players[i].points + " punts | " + players[i].time + "s";
+        playerDiv.appendChild(playerCode);
+        playerNames.appendChild(playerDiv);
     }
 }
 
@@ -384,7 +252,9 @@ function fillFormWinner(winner) {
     form.submit();
 }
 
-
+/**
+ * sort the players in score descending in order to send the winner to the hall of fame
+ */
 function orderObjects() {
     const results = new Map();
     for (let i = 0; i < players.length; i++) {

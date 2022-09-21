@@ -3,7 +3,20 @@
     text-decoration: none;
 }
 
+kbd {
+    font-size: xx-large;
+    text-align: center;
+    padding: 1em;
+    width: 100%;
+    margin-bottom: 1em;
+}
+
 /* #region game */
+/* 
+.principalPlayer {
+    text-align: center;
+} */
+
 .allPlayers>* {
     margin-bottom: var(--spacing);
 }
@@ -51,5 +64,15 @@
 th {
     background-color: #73828c;
     color: #f6f8f9;
+}
+
+.navTable {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.navTable>* {
+    max-width: 200px;
 }
 /* #endregion Hall of fame */
