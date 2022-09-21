@@ -9,10 +9,10 @@
 
     <link rel="stylesheet" href="css/pico.css">
     <link rel="stylesheet" href="css/mine.css">
-
 </head>
 
 <body>
+
     <div class="container">
         <div class="section">
             <h1><a href="index.html">Memory:</a> <code>Saló de la Fama</code></h1>
@@ -28,6 +28,7 @@
                         <th>Temps</th>
                         <th>Torns</th>
                     </tr>
+                    <!-- 
                     <tr>
                         <td>yo</td>
                         <td>yo</td>
@@ -62,20 +63,34 @@
                         <td>yo</td>
                         <td>yo</td>
                         <td>yo</td>
-                    </tr>
+                    </tr> -->
                 </table>
+                    <?php
 
-                <?php
+                    @$rankings = @json_decode($_COOKIE["memoryPlayers"]);
+                    @$cookiesData = [];
+                    @$arrayData = [];
+                    foreach ($rankings as $index => $array) {
+                        foreach ($array as $key => $value) {
+                            array_push($arrayData, $value);
+                        }
+                        array_push($cookiesData, $arrayData);
+                        $arrayData = [];
+                    }
+                    echo "<p>";
+                    print_r($cookiesData);
+                    echo "</p>";
+                    sort($cookiesData);
+                    echo "<p>";
+                    print_r($cookiesData);
+                    echo "</p>";
+                    /* sort by points */
+                    /* usort($sortedPlayers, function ($a, $b) {
+                        return $a["amount"] - $b["amount"];
+                    }); */
 
-                foreach ($_COOKIE as $i => $value) {
-                ?>
-                    <p>
-                        <?php echo $i . "= " . $value; ?>
-                    </p>
-                <?php
-                };
+                    ?>
 
-                ?>
 
             </div>
 

@@ -76,6 +76,15 @@
             Arnau Granados - 2.DAW Cendrassos 2022/2023
         </div>
 
+        <div class="hidden">
+            <form action="stupidForm.php" method="get" id="scoreBoardForm">
+                <input type="text" name="name">
+                <input type="text" name="points">
+                <input type="text" name="time">
+                <input type="text" name="turns">
+            </form>
+        </div>
+
     </div>
 
 </body>

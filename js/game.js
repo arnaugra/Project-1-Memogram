@@ -21,22 +21,15 @@ class playerObj {
         this.turns = 0;
         this.points = 0;
     }
-
-    data() {
-        const data = []
+    /* data() {
         var date = new Date();
+        const data= ["nom:"+this.name+", points:"+this.points+", time:"+this.time+", turns:"+this.turns+", expires:"+date.setFullYear(date.getFullYear() + 10)];
 
-        data.push(this.name);
-        data.push(this.points);
-        data.push(this.time);
-        data.push(this.turns);
-        data.push(date.setFullYear(date.getFullYear() + 10));
-
-        console.log(data)
+        console.log(data);
+        alert(0);
 
         return data;
-    }
-
+    } */
 }
 
 // define and declare every posible player
@@ -279,9 +272,8 @@ function cardClick(card) {
         var clapping = new Audio("/audio/clapping.wav")
         clapping.volume = 0.1;
         clapping.play();
-        createCookies(players[actualPlayer].data());
         setTimeout(() => {
-            window.location.pathname = ("/hallOfFame.php")
+            fillFormWinner(players[actualPlayer]);
         }, 9000);
     }
 }
@@ -380,10 +372,16 @@ function cardFail() {
 }
 
 /**
- * COOKIES
+ * form to send the winner info and create the cookies
  */
-function createCookies(data) {
-    document.cookie = "player=" + data;
+function fillFormWinner(winner) {
+    var date = new Date();
+    const form = document.forms['scoreBoardForm'];
+    form[0].value = winner.name;
+    form[1].value = winner.points;
+    form[2].value = winner.time;
+    form[3].value = winner.turns;
+    form.submit();
 }
 
 
@@ -392,7 +390,7 @@ function orderObjects() {
     for (let i = 0; i < players.length; i++) {
         results.set(i, players[i].points);
     }
-let max;
+    let max;
 
     for (let [key, value] of results.entries()) {
         if (value === Math.max(...results.values())) {
@@ -400,6 +398,4 @@ let max;
         }
     }
     actualPlayer = max;
-    console.log(results);
-    console.log(Math.max(...results.values()));
 }

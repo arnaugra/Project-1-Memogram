@@ -44,6 +44,10 @@
 /* #endregion game */
 
 /* #region hall of fame */
+.hidden>* {
+    display: none;
+}
+
 th {
     background-color: #73828c;
     color: #f6f8f9;
