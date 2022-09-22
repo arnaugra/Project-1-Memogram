@@ -13,7 +13,15 @@ kbd {
 
 /* #region game */
 
+.principalPlayer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
 .principalPlayer>*:nth-child(1) {
+    width: 50%;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -21,8 +29,11 @@ kbd {
     align-self: center;
 }
 .principalPlayer>*:nth-child(2) {
+    width: fit-content;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
     align-self: center;
 }
 

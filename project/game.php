@@ -45,10 +45,11 @@
         <div class="section hud grid">
             <div class="principalPlayer grid">
                 <div class="headings">
-                <h3><span id="player"></span>: <span id="time"><?php echo $_GET['turnTime'] ?></span> s</h3>
-                <h4>Torn: <span id="turn"></span> - Puntuació: <span id="score"></span></h4>
+                    <h3><span id="player"></span>: <span id="time"><?php echo $_GET['turnTime'] ?></span> s</h3>
+                    <h4>Torn: <span id="turn"></span> - Puntuació: <span id="score"></span></h4>
                 </div>
-                <div>
+                <div class="headings">
+                    <h3>Temps total:</h3>
                     <h3><span id="totalTime">0</span> s</h3>
                 </div>
             </div>
@@ -133,10 +134,10 @@
 
         </div>
 
-    </div>
+        <div class="section">
+            Arnau Granados - 2.DAW Cendrassos 2022/2023
+        </div>
 
-    <div class="section">
-        Arnau Granados - 2.DAW Cendrassos 2022/2023
     </div>
 
     <div class="hidden">

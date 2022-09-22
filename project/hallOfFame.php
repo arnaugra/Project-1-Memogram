@@ -42,7 +42,7 @@
                     $index = 1;
 
                     for ($i = 0; $i < count($cookie) + 4; $i++) {
-                        if ($index > 10 || $cookie[$i] == "") {
+                        if ($i > 9 || $cookie[$i] == "") {
                             break;
                         }
                         echo "<tr>";
@@ -53,47 +53,11 @@
                         }
                     }
                     echo "</table>";
-
-                    /* if (array_key_exists("nextPage", $_POST)) {
-                        nextPage($pos, $index, $cookie);
-                    } elseif (array_key_exists("prevPage", $_POST)) {
-                        prevPage($pos, $index, $cookie);
-                    }
-
-                    function nextPage($pos, $index, $cookie)
-                    {
-
-                        for ($i = $pos - 1; $i < $pos + 4; $i++) {
-                            echo "<tr>";
-                            echo "<td>$index</td>";
-                            $index++;
-                            for ($j = 0; $j < count($cookie[$i]); $j++) {
-                                echo "<td>" . $cookie[$i][$j] . "</td>";
-                            }
-                        }
-                    }
-                    function prevPage($pos, $index, $cookie)
-                    {
-
-                        for ($i = $pos - 1; $i < $pos + 4; $i++) {
-                            echo "<tr>";
-                            echo "<td>$index</td>";
-                            $index++;
-                            for ($j = 0; $j < count($cookie[$i]); $j++) {
-                                echo "<td>" . $cookie[$i][$j] . "</td>";
-                            }
-                        }
-                    } */
                     }
                     
 
                     
                     ?>
-
-                <!-- <form method="post" class="navTable">
-                    <input type="submit" value="<" name="nextPage">
-                    <input type="submit" value=">" name="prevPage">
-                </form> -->
 
 
             </div>
