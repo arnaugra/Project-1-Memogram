@@ -20,31 +20,19 @@
 
 ***
 
-# Requirements
+# Requirements (que ha de fer)
 
-### Text editor
-- Visual Estudio Code
+The program must be run on a web server, supported by php software, it is a memory game, where it asks for data through a form to adapt the game to the player's demand, and once finished the game, pick up the status of the actual player and add it tho the cookie data to be displayed in the hall of fame.
 
-### Browser
-- Google Chrome
-- Microsoft Edge
+Needs a modern browser to be able to execute PHP8+ and JSES6 (no IE6...).
 
-### Scripting language
-- PHP 8.1.10
+***
 
-### Virtual Machine
-- Oracle MV VirtualBox
-
-### Server
-- Debian Virtual Machine
-
-
-
-
+# Functional tests
 
 ***
 # Parts del projecte
-Control de versions *
+Control de versions 
  - Crear un repositori a GitHub i compartir-lo amb l’equip docent 
 
  - Crear un repositori local i vincular-lo amb el remot 

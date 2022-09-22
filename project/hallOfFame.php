@@ -41,7 +41,7 @@
                     $cookie = json_decode($_COOKIE["memoryPlayers"]);
                     $index = 1;
 
-                    for ($i = 0; $i < count($cookie) + 4; $i++) {
+                    for ($i = 0; $i < count($cookie); $i++) {
                         if ($i > 9 || $cookie[$i] == "") {
                             break;
                         }
