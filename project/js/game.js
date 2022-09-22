@@ -4,6 +4,7 @@ var idClicked = [];
 var totalMatch = 0;
 var actualPlayer = 0;
 var controlStart = false;
+var theEnd = false;
 
 //#region player system
 
@@ -100,7 +101,8 @@ console.warn("COMENTA ESTO");
  */
 function cardClick(card) {
     if (!controlStart) {
-        countDown();
+        countDownPlayer();
+        countdownGame();
         controlStart = true;
     }
     if (classClicked.length != 2) {
@@ -136,7 +138,9 @@ function cardClick(card) {
 
     // wining
     if (totalMatch == totalCards.length) {
-        stopCountDown();
+        theEnd = true;
+        clearInterval(timer);
+        clearInterval(globalTimer);
         console.log("yay");
         orderObjects();
         var clapping = new Audio("/audio/clapping.wav")
@@ -153,7 +157,7 @@ var timer;
 /**
  * counter for each turn of each player
  */
-function countDown() {
+function countDownPlayer() {
     if (turnTime > 0) {
         timer = setInterval(myTimer, 1000);
 
@@ -174,11 +178,20 @@ function countDown() {
     }
 }
 
+
+var globalTimer;
 /**
- * stops the counter for each turn of each player
+ * 
  */
-function stopCountDown() {
-    clearInterval(timer);
+function countdownGame() {
+    globalTimer = setInterval(() => {
+        var gameTime = parseInt(document.querySelector("#totalTime").textContent);
+        document.querySelector("#totalTime").innerHTML = parseInt(gameTime) + 1;
+
+        if (theEnd) {
+            clearInterval(this);
+        }
+    }, 1000);
 }
 
 /**
@@ -249,6 +262,7 @@ function fillFormWinner(winner) {
     form[1].value = winner.points;
     form[2].value = winner.time;
     form[3].value = winner.turns;
+    form[4].value = parseInt(document.querySelector("#totalTime").textContent);
     form.submit();
 }
 

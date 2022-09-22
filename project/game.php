@@ -43,9 +43,14 @@
             <h1><a href="index.html">Memory:</a> <code>Joc</code></h1>
         </div>
         <div class="section hud grid">
-            <div class="headings principalPlayer">
+            <div class="principalPlayer grid">
+                <div class="headings">
                 <h3><span id="player"></span>: <span id="time"><?php echo $_GET['turnTime'] ?></span></h3>
                 <h4>Torn: <span id="turn"></span> - Puntuació: <span id="score"></span></h4>
+                </div>
+                <div class="headings">
+                    <h3><span id="totalTime">0</span></h3>
+                </div>
             </div>
             <div class="section allPlayers">
 
@@ -140,6 +145,7 @@
             <input type="text" name="points">
             <input type="text" name="time">
             <input type="text" name="turns">
+            <input type="text" name="gameTime">
         </form>
     </div>
 

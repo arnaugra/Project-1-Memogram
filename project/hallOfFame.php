@@ -27,6 +27,7 @@
                         <th>Punts</th>
                         <th>Temps</th>
                         <th>Torns</th>
+                        <th>Temps de joc</th>
                     </tr>
 
                     <?php

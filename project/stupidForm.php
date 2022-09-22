@@ -1,5 +1,5 @@
 <?php
-$info = [$_GET["name"],$_GET["points"],$_GET["time"],$_GET["turns"]];
+$info = [$_GET["name"],$_GET["points"],$_GET["time"],$_GET["turns"], $_GET["gameTime"]];
 
 if (!isset($_COOKIE["memoryPlayers"])) {
     $playerCookies = [];
