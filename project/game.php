@@ -8,7 +8,7 @@
 
     <title>Memory Arnau Granados</title>
 
-    <link rel="stylesheet" href="css/pico.css">
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
     <link rel="stylesheet" href="css/mine.css">
 
     <script>
@@ -45,11 +45,11 @@
         <div class="section hud grid">
             <div class="principalPlayer grid">
                 <div class="headings">
-                <h3><span id="player"></span>: <span id="time"><?php echo $_GET['turnTime'] ?></span></h3>
+                <h3><span id="player"></span>: <span id="time"><?php echo $_GET['turnTime'] ?></span> s</h3>
                 <h4>Torn: <span id="turn"></span> - Puntuació: <span id="score"></span></h4>
                 </div>
-                <div class="headings">
-                    <h3><span id="totalTime">0</span></h3>
+                <div>
+                    <h3><span id="totalTime">0</span> s</h3>
                 </div>
             </div>
             <div class="section allPlayers">
