@@ -151,7 +151,7 @@ Control de versions
  - Crear un repositori local i vincular-lo amb el remot 
 
 Servidor web 
-> - Crear una màquina virtual amb un servidor web 
+ - Crear una màquina virtual amb un servidor web 
 
 > - Executar l’aplicació en el servidor 
 
