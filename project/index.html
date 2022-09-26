@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -31,7 +31,7 @@
 
         <div>
             <h1>
-                <a href="index.html">Memory: </a><code>Configuració</code>
+                <a href="index.html">Memory: </a><code>Configuration</code>
             </h1>
         </div>
 
@@ -39,10 +39,10 @@
             <form action="game.php" method="get" id="configForm">
 
                 <div>
-                    <p>Jugadors: </p>
+                    <p>Players: </p>
                     <select name="nPlayers" id="nPlayers" onchange="players()">
-                        <option value="" selected disabled hidden>Selecciona el nombre de jugadors</option>
                         <option value="1">1</option>
+                        <option value="" selected disabled hidden>Select the number of players</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
@@ -53,15 +53,15 @@
                 </div>
 
                 <div>
-                    <p>Categoría: </p>
+                    <p>Category: </p>
                     <select name="category" id="category">
-                        <option value="dog">Gossos</option>
-                        <option value="duck">Ànecs</option>
+                        <option value="dog">Dogs</option>
+                        <option value="duck">Ducks</option>
                     </select>
                 </div>
 
                 <div>
-                    <p>Taulell: </p>
+                    <p>Board: </p>
                     <select name="boardSize" id="boardSize">
                         <option value="1">3x2</option>
                         <option value="2">4x3</option>
@@ -70,9 +70,9 @@
                 </div>
 
                 <div>
-                    <p>Temps per torn: </p>
+                    <p>Time per turn: </p>
                     <select name="turnTime" id="turnTime">
-                        <option value="0">0 (No hi ha temps per torn)</option>
+                        <option value="0">0 (There is no turn time)</option>
                         <option value="3">3</option>
                         <option value="6">6</option>
                         <option value="9">9</option>
@@ -80,14 +80,14 @@
                 </div>
 
                 <div>
-                    <input type="button" value="Començar" onclick="validate();" />
+                    <input type="button" value="Start" onclick="validate();" />
                 </div>
 
             </form>
 
             <div>
                 <a href="hallOfFame.php">
-                    <input type="button" value="Saló de la Fama" class="secondary" />
+                    <input type="button" value="Hall of fame" class="secondary" />
                 </a>
             </div>
 

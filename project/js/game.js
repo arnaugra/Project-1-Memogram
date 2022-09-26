@@ -217,7 +217,7 @@ function playerList() {
         var playerDiv = document.createElement("div");
         var playerCode = document.createElement("code");
         playerCode.setAttribute("class", "container-fluid")
-        playerCode.innerHTML = players[i].name + " : " + players[i].turns + " torns | " + players[i].points + " punts | " + players[i].time + "s";
+        playerCode.innerHTML = players[i].name + " : " + players[i].turns + " turns | " + players[i].points + " points | " + players[i].time + "s";
         playerDiv.appendChild(playerCode);
         playerNames.appendChild(playerDiv);
     }

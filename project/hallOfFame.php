@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -17,7 +17,7 @@
 
     <div class="container">
         <div class="section">
-            <h1><a href="index.html">Memory:</a> <code>Saló de la Fama</code></h1>
+            <h1><a href="index.html">Memory:</a> <code>Hall of fame</code></h1>
         </div>
         <div class="section">
 
@@ -25,11 +25,11 @@
                 <table role="grid">
                     <tr>
                         <th>Id</th>
-                        <th>Nom</th>
-                        <th>Punts</th>
-                        <th>Temps</th>
-                        <th>Torns</th>
-                        <th>Temps de joc</th>
+                        <th>Name</th>
+                        <th>Score</th>
+                        <th>Time</th>
+                        <th>Turns</th>
+                        <th>Game time</th>
                     </tr>
 
                     <?php

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -40,16 +40,16 @@
 <body>
     <div class="container">
         <div class="section">
-            <h1><a href="index.html">Memory:</a> <code>Joc</code></h1>
+            <h1><a href="index.html">Memory:</a> <code>Game</code></h1>
         </div>
         <div class="section hud grid">
             <div class="principalPlayer grid">
                 <div class="headings">
                     <h3><span id="player"></span>: <span id="time"><?php echo $_GET['turnTime'] ?></span> s</h3>
-                    <h4>Torn: <span id="turn"></span> - Puntuació: <span id="score"></span></h4>
+                    <h4>Turn: <span id="turn"></span> - Score: <span id="score"></span> points</h4>
                 </div>
                 <div class="headings">
-                    <h3>Temps total:</h3>
+                    <h3>Total time:</h3>
                     <h3><span id="totalTime">0</span> s</h3>
                 </div>
             </div>
