@@ -1,3 +1,14 @@
+
+# Inicialice
+In order to execute the game, you need to:
+- Have [JavaScript enabled](https://support.google.com/adsense/answer/12654?hl=en) on your browser 
+- Have installed [PHP8](https://www.php.net/downloads) or newer
+- Open terminal in the "project" folder and write `php -S localhost:8080`
+- Go to [localhost:8080](http://localhost:8080/) on your browser.
+
+# Score board data
+At the end of the game, a cookie is created with the game stats to create a score board, saves "unlimited" scores but shows only the first 10.
+
 ***
 
 # Planning
@@ -20,15 +31,11 @@
 
 9. I had to change my board building system to php, now it does the same. But with php.
 
-***
-
 # Requirements
 
 The program must be run on a web server, supported by php software, it is a memory game, where it asks for data through a form to adapt the game to the player's demand, and once finished the game, pick up the status of the actual player and add it tho the cookie data to be displayed in the hall of fame.
 
 Needs a modern browser to be able to execute PHP8+ and JSES6 (no IE6...).
-
-***
 
 # Functional tests
 
@@ -42,191 +49,3 @@ Needs a modern browser to be able to execute PHP8+ and JSES6 (no IE6...).
 ![Hall of fame full (10 scores)](fullHallOfFame.jpg) Test #4 : Hall of fame of top ten scores.
 
 ![Hall of fame empty](emptyHallOfFame.jpg) Test #4 : Hall of fame of top ten scores.
-
-***
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Parts del projecte
-Control de versions 
- - Crear un repositori a GitHub i compartir-lo amb l’equip docent 
-
- - Crear un repositori local i vincular-lo amb el remot 
-
-Servidor web 
- - Crear una màquina virtual amb un servidor web 
-
-> - Executar l’aplicació en el servidor 
-
- - Validació de les dades del formulari inicial 
-
- - Desar la informació quan es finalitza una partida en COOKIES (Nom del jugador, punts). 
-
- - Generar un llistat (hall-of-fame) amb la informació desada a les COOKIES en entorn de servidor. 
-
-Aplicació 
- - Crear un formulari que demani les dades inicials del joc. 
-
- - A partir de les dades del formulari, generar la pantalla d’inici des de l’entorn de servidor. 
-
- - Crear una graella on mostrarem les cartes. Cada element serà interactiu i a partir d’un event, generarà l’acció corresponent. 
-
- - Mostrarem les següents dades per pantalla: 
-   - Número de torn. 
-   - Quin és el jugador que li toca jugar. 
-   - Puntuació actual de cada jugador. 
-   - El temps restant del torn (si està activat).. 
-
- - Crear una pàgina de classificació amb un llistat dels Jugadors ordenats per punts. 
-
- - Crear un full d’estils únic per tot el projecte. 
-
->> - Opcional: Aplicar animacions CSS3 per dotar d’efectes les cartes. 
-
->> - Opcional 2: Afegir un “Easter Egg” en que un usuari introdueix una combinació especial amb el teclat (paraula, codi Konami…) durant la partida, i llavors el joc li mostra la solució (per consola), li canvia el nom per “CHEATER” i no es desa la puntuació.
-
-
-Documentació 
- - Planificació 
- - Requisits 
- - Tests de funcionament 
- - Millores 
- - Documentar el codi 
- 
-# Etapes 
-## Etapa 1 
-
-Navegació web http a projecte 
-
-Portada del joc i accés al formulari inicial 
-
-Planificació del projecte 
-
-Anàlisi de requisits 
-
-El Git instal·lat 
-
-El repositori local del projecte 
-
-## Etapa 2 
-
-Validació del formulari i càrrega de la interfície del joc (sense que funcioni) 
-
-Maquetació del prototip en funcionament 
-
-Crear un repositori a Github i vincular el repositori local
-
-## Etapa 3 
-
-Implementació del joc (que es pugui jugar correctament) 
-
-Mostra de la pàgina de classificació a partir de les dades de la cookie. 
-
-Implementar les correccions 
-
-## Etapa 4 
-
-Incorporat el temporitzador dels torns 
-
-Proves de funcionament 
-
->Generar automàticament la documentació del codi 
-
-Implementar les correccions 
