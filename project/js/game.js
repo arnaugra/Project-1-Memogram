@@ -85,7 +85,7 @@ function changePlayer() {
  */
 window.onload = function () {
     totalCards = document.querySelectorAll(".card");
-    console.warn("No vulguis fer trampes 😡");
+    console.warn("DON'T YOU THINK OF CHEATING 😡");
 
     // JSDoc (1)
     playerList();
@@ -94,9 +94,14 @@ window.onload = function () {
 //#endregion
 
 //#region click control
-console.warn("COMENTA ESTO");
 /**
- * 
+ * when image clicked:
+ *  1. check how many cards are turned
+ *  2. compare the cards whenin point 1 are 2
+ *  3. 1. if they are the same, resets the time, and updates the player stats
+ *     2. if they are different, changes the actual player and updates his stats
+ *  4. when all cards are turned, the gme ends, people claps at you because of this great feat
+ *  5. fills an imbisible form with the player name and game stats and submits it to the cookie creator "stupidForm.php"
  * @param {HTMLElement} card - Image clicked
  */
 function cardClick(card) {
