@@ -12,24 +12,24 @@
     <link rel="stylesheet" href="css/mine.css">
 
     <script>
-        const nPlayers = "<?php echo $_GET['nPlayers'] ?>";
-        const cat = "<?php echo $_GET['category'] ?>";
-        const boardSize = "<?php echo $_GET['boardSize'] ?>";
-        const turnTime = <?php echo $_GET['turnTime'] ?>;
-        const name1 = "<?php echo $_GET['player1'] ?>";
+        const nPlayers = "<?php echo $_POST['nPlayers'] ?>";
+        const cat = "<?php echo $_POST['category'] ?>";
+        const boardSize = "<?php echo $_POST['boardSize'] ?>";
+        const turnTime = <?php echo $_POST['turnTime'] ?>;
+        const name1 = "<?php echo $_POST['player1'] ?>";
         const name2 = "";
         const name3 = "";
         const name4 = "";
         const names = [name1];
         for (let i = 2; i <= (parseInt(nPlayers)); i++) {
             if (i == 2) {
-                names.push("<?php echo @$_GET['player2'] ?>")
+                names.push("<?php echo @$_POST['player2'] ?>")
             }
             if (i == 3) {
-                names.push("<?php echo @$_GET['player3'] ?>")
+                names.push("<?php echo @$_POST['player3'] ?>")
             }
             if (i == 4) {
-                names.push("<?php echo @$_GET['player4'] ?>")
+                names.push("<?php echo @$_POST['player4'] ?>")
             }
         }
     </script>
@@ -45,7 +45,7 @@
         <div class="section hud grid">
             <div class="principalPlayer grid">
                 <div class="headings">
-                    <h3><span id="player"></span>: <span id="time"><?php echo $_GET['turnTime'] ?></span> s</h3>
+                    <h3><span id="player"></span>: <span id="time"><?php echo $_POST['turnTime'] ?></span> s</h3>
                     <h4>Turn: <span id="turn"></span> - Score: <span id="score"></span> points</h4>
                 </div>
                 <div class="headings">
@@ -67,7 +67,7 @@
                 $x;
                 $y;
                 $totalCards = 0;
-                switch ($_GET['boardSize']) {
+                switch ($_POST['boardSize']) {
                     case '1':
                         $x = 3;
                         $y = 2;
@@ -117,7 +117,7 @@
                     for ($j = 0; $j < $x; $j++) {
                         echo "<div id='$index' class='card'>";
 
-                        echo "<img src=\"img/" . $_GET['category'] . "/" . $_GET['category'] . $imageCards[$index] . ".jpg\" onclick=\"cardClick(this)\" class=\"card" . $imageCards[$index] . "\" id=\"c" . $idCards[$index] . "\">";
+                        echo "<img src=\"img/" . $_POST['category'] . "/" . $_POST['category'] . $imageCards[$index] . ".jpg\" onclick=\"cardClick(this)\" class=\"card" . $imageCards[$index] . "\" id=\"c" . $idCards[$index] . "\">";
 
                         echo "</div>";
                         $index++;
@@ -141,7 +141,7 @@
     </div>
 
     <div class="hidden">
-        <form action="stupidForm.php" method="get" id="scoreBoardForm">
+        <form action="stupidForm.php" method="post" id="scoreBoardForm">
             <input type="text" name="name">
             <input type="text" name="points">
             <input type="text" name="time">
