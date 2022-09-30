@@ -6,6 +6,62 @@ var actualPlayer = 0;
 var controlStart = false;
 var theEnd = false;
 
+
+let easterEgg = [];
+
+
+document.addEventListener("keydown", (event) => {
+    if (controlStart) {
+        if (easterEgg.length == 0) {
+            setTimeout(() => {
+                if (easterEgg.length == 3) {
+                    if (easterEgg[0] == "D" && easterEgg[1] == "A" && easterEgg[2] == "W") {
+                        alert('hi cheater easteregg');
+                        cheater();
+                    }
+                } else {
+                    easterEgg = [];
+                }
+            }, 1500);
+        }
+        if (easterEgg.length < 3) {
+            switch (event.key.toUpperCase()) {
+                case "D":
+                    easterEgg.push("D");
+                    break;
+                case "A":
+                    easterEgg.push("A");
+                    break;
+                case "W":
+                    easterEgg.push("W");
+                    break;
+
+                default:
+                    easterEgg = [];
+                    break;
+            }
+
+        }
+    }
+});
+
+function cheater() {
+    let cards = document.querySelectorAll(".card");
+    cards.forEach(element => {
+        element.firstElementChild.style.opacity = "1";
+        players[actualPlayer].setName("CHEATER");
+        playerList();
+        currentPlayer();
+        totalMatch = totalCards;
+        clearInterval(timer);
+        clearInterval(globalTimer);
+    });
+    setTimeout(() => {
+        window.location.href = "index.html";
+    }, 1500);
+}
+
+
 //#region player system
 
 /**
@@ -19,6 +75,10 @@ class playerObj {
         this.time = 0;
         this.turns = 0;
         this.points = 0;
+    }
+
+    setName(name) {
+        this.name = name;
     }
 }
 
@@ -127,7 +187,6 @@ function cardClick(card) {
             totalMatch += 2;
             document.querySelector("#time").innerHTML = turnTime;
         } else {
-            console.log("fail");
             players[actualPlayer].turns++;
             document.querySelector("#time").innerHTML = turnTime;
             setTimeout(() => {
@@ -173,6 +232,13 @@ function countDownPlayer() {
             playerList();
 
             if (actualTime < 1) {
+                if (classClicked.length == 1) {
+                    let flipedCard = document.querySelectorAll("." + classClicked[0])
+                    flipedCard.forEach(card => {
+                        console.log(card);
+                        card.style.opacity = "0";
+                    });
+                }
                 document.querySelector("#time").innerHTML = turnTime;
                 players[actualPlayer].turns++;
                 changePlayer();
