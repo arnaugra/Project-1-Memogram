@@ -61,7 +61,6 @@ function cheater() {
     }, 1500);
 }
 
-
 //#region player system
 
 /**
@@ -180,7 +179,6 @@ function cardClick(card) {
     if (classClicked.length == 2) {
 
         if (classClicked[0] == classClicked[1]) {
-            console.log("goal");
             classClicked = [];
             idClicked = [];
             players[actualPlayer].points++;
@@ -205,7 +203,6 @@ function cardClick(card) {
         theEnd = true;
         clearInterval(timer);
         clearInterval(globalTimer);
-        console.log("yay");
         orderObjects();
         var clapping = new Audio("/audio/clapping.wav")
         clapping.volume = 0.1;
@@ -235,7 +232,6 @@ function countDownPlayer() {
                 if (classClicked.length == 1) {
                     let flipedCard = document.querySelectorAll("." + classClicked[0])
                     flipedCard.forEach(card => {
-                        console.log(card);
                         card.style.opacity = "0";
                     });
                 }
